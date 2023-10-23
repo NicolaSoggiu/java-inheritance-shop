@@ -7,16 +7,16 @@ public class Cart {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Which product do you want to buy?");
-        System.out.println("1. Smartphone");
-        System.out.println("2. Tv");
-        System.out.println("3. Headphones");
-        System.out.println("4. End");
-
-        int choice = scan.nextInt();
-        scan.nextLine();
-
         while (true) {
+            System.out.println("Which product do you want to buy?");
+            System.out.println("1. Smartphone");
+            System.out.println("2. Tv");
+            System.out.println("3. Headphones");
+            System.out.println("4. End");
+
+            int choice = scan.nextInt();
+            scan.nextLine();
+
             if (choice == 1) {
                 System.out.println("Enter the name of the smartphone: ");
                 String name = scan.nextLine();
@@ -32,7 +32,6 @@ public class Cart {
                 int memory = scan.nextInt();
                 Smartphone smartphone = new Smartphone(name, description, price, new BigDecimal(vat), ImeiCode, memory );
                 System.out.println(smartphone);
-                break;
             } else if (choice == 2) {
                 System.out.print("Enter the name of the TV: ");
                 String TvName = scan.nextLine();
@@ -48,7 +47,6 @@ public class Cart {
                 boolean smart = scan.nextBoolean();
                 Tv tv = new Tv(TvName, TvDescription, TvPrice, new BigDecimal(TvVat), dimension, smart);
                 System.out.println(tv);
-                break;
             } else if (choice == 3) {
                 System.out.print("Enter the name of the headphones: ");
                 String headName = scan.nextLine();
@@ -66,7 +64,6 @@ public class Cart {
                 boolean wireless = scan.nextBoolean();
                 Headphones headphones = new Headphones(headName, headDescription, headPrice, new BigDecimal(headVat), color, wireless);
                 System.out.println(headphones);
-                break;
             } else if (choice == 4) {
                 System.out.println("Goodbye");
                 break;
