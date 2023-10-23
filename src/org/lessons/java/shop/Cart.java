@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Cart {
     public static void main(String[] args) {
+
+        Product[] cart = new Product[100];
+        int count = 0;
+
         Scanner scan = new Scanner(System.in);
 
         while (true) {
@@ -31,6 +35,8 @@ public class Cart {
                 System.out.println("Enter the memory (gb): ");
                 int memory = scan.nextInt();
                 Smartphone smartphone = new Smartphone(name, description, price, new BigDecimal(vat), ImeiCode, memory );
+                cart[count] = smartphone;
+                count++;
                 System.out.println(smartphone);
             } else if (choice == 2) {
                 System.out.print("Enter the name of the TV: ");
@@ -46,6 +52,8 @@ public class Cart {
                 System.out.print("Is a smart TV? Insert (true) for yes or (false) for not: ");
                 boolean smart = scan.nextBoolean();
                 Tv tv = new Tv(TvName, TvDescription, TvPrice, new BigDecimal(TvVat), dimension, smart);
+                cart[count] = tv;
+                count++;
                 System.out.println(tv);
             } else if (choice == 3) {
                 System.out.print("Enter the name of the headphones: ");
@@ -63,12 +71,20 @@ public class Cart {
                 System.out.print("Is wireless? Insert true for yes or false for not: ");
                 boolean wireless = scan.nextBoolean();
                 Headphones headphones = new Headphones(headName, headDescription, headPrice, new BigDecimal(headVat), color, wireless);
+                cart[count] = headphones;
+                count++;
                 System.out.println(headphones);
             } else if (choice == 4) {
                 System.out.println("Goodbye");
                 break;
             }
         }
+
+        System.out.println("The products in the cart are: ");
+        for (int i = 0; i < count; i++) {
+            System.out.println(cart[i].getFullName());
+        }
+
         scan.close();
     }
 }
