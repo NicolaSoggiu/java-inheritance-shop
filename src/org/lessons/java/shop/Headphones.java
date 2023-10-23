@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 public class Headphones extends Product {
     private String color;
     private boolean isWireless;
+
     public Headphones(String name, String description, BigDecimal price, BigDecimal vat, String color, boolean isWireless) {
         super(name, description, price, vat);
         this.color = color;
@@ -25,5 +26,18 @@ public class Headphones extends Product {
 
     public void setWireless(boolean wireless) {
         isWireless = wireless;
+    }
+
+    private  String headType(){
+        if(isWireless){
+            return  "Cuffie wireless";
+        }else{
+            return "cuffie cablate ";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Which color? " + color + " " + "Is Wireless?: " + isWireless;
     }
 }

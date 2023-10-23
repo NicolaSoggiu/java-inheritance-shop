@@ -29,6 +29,14 @@ public class Tv extends Product {
         isSmart = smart;
     }
 
+    public String tvSmart() {
+        if (isSmart) {
+            return "Is a smart TV";
+        } else {
+            return "Not smart TV";
+        }
+    }
+
     @Override
     public String toString() {
         return super.toString() + "Dimension: " + dimension + " " + "Is smart? " + isSmart;

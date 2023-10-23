@@ -14,22 +14,24 @@ public class Cart {
         System.out.println("4. End");
 
         int choice = scan.nextInt();
+        scan.nextLine();
 
         while (true) {
             if (choice == 1) {
-                System.out.print("Enter the name of the smartphone: ");
+                System.out.println("Enter the name of the smartphone: ");
                 String name = scan.nextLine();
-                System.out.print("Enter the description of the smartphone: ");
+                System.out.println("Enter the description of the smartphone: ");
                 String description = scan.nextLine();
-                System.out.print("Enter the price: ");
+                System.out.println("Enter the price: ");
                 BigDecimal price = scan.nextBigDecimal();
-                System.out.print("Enter the vat: ");
+                System.out.println("Enter the vat: ");
                 double vat = scan.nextDouble();
-                System.out.print("Enter the IMEI code: ");
+                System.out.println("Enter the IMEI code: ");
                 int ImeiCode = scan.nextInt();
-                System.out.print("Enter the memory (gb): ");
+                System.out.println("Enter the memory (gb): ");
                 int memory = scan.nextInt();
                 Smartphone smartphone = new Smartphone(name, description, price, new BigDecimal(vat), ImeiCode, memory );
+                System.out.println(smartphone);
                 break;
             } else if (choice == 2) {
                 System.out.print("Enter the name of the TV: ");
@@ -42,7 +44,7 @@ public class Cart {
                 double TvVat = scan.nextInt();
                 System.out.print("Enter the dimension of the TV: ");
                 int dimension = scan.nextInt();
-                System.out.print("Is a smart TV? Insert true for yes or false for not");
+                System.out.print("Is a smart TV? Insert (true) for yes or (false) for not: ");
                 boolean smart = scan.nextBoolean();
                 Tv tv = new Tv(TvName, TvDescription, TvPrice, new BigDecimal(TvVat), dimension, smart);
                 break;
@@ -57,7 +59,7 @@ public class Cart {
                 double headVat = scan.nextInt();
                 System.out.print("Enter the color: ");
                 String color = scan.nextLine();
-                System.out.print("Is wirless? Insert true for yes or false for not");
+                System.out.print("Is wireless? Insert true for yes or false for not: ");
                 boolean wireless = scan.nextBoolean();
                 Headphones headphones = new Headphones(headName, headDescription, headPrice, new BigDecimal(headVat), color, wireless);
                 break;
@@ -66,8 +68,6 @@ public class Cart {
                 break;
             }
         }
-
-
         scan.close();
     }
 }
