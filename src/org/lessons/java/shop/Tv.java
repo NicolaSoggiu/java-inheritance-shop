@@ -7,7 +7,7 @@ public class Tv extends Product {
     private int dimension;
     private boolean isSmart;
 
-    public Tv(String name, String description, BigDecimal price, BigDecimal vat) {
+    public Tv(String name, String description, BigDecimal price, BigDecimal vat, int dimension, boolean isSmart) {
         super(name, description, price, vat);
         this.dimension = dimension;
         this.isSmart = isSmart;
@@ -27,5 +27,10 @@ public class Tv extends Product {
 
     public void setSmart(boolean smart) {
         isSmart = smart;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Dimension: " + dimension + " " + "Is smart? " + isSmart;
     }
 }

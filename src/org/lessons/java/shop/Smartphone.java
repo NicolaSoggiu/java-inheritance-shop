@@ -3,17 +3,17 @@ package org.lessons.java.shop;
 import java.math.BigDecimal;
 
 public class Smartphone extends Product {
-    private int codeIMEI;
+    private int ImeiCode;
     private int memory;
 
     public Smartphone(String name, String description, BigDecimal price, BigDecimal vat, int codeIMEI, int memory) {
         super(name, description, price, vat);
-        this.codeIMEI = codeIMEI;
+        this.ImeiCode = codeIMEI;
         this.memory = memory;
     }
 
     public int getCodeIMEI() {
-        return codeIMEI;
+        return ImeiCode;
     }
 
     public int getMemory() {
@@ -21,10 +21,15 @@ public class Smartphone extends Product {
     }
 
     public void setCodeIMEI(int codeIMEI) {
-        this.codeIMEI = codeIMEI;
+        this.ImeiCode = codeIMEI;
     }
 
     public void setMemory(int memory) {
         this.memory = memory;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "IMEI Code: " + ImeiCode + " " + "Memory: " + memory;
     }
 }
