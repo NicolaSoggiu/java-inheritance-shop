@@ -80,10 +80,18 @@ public class Cart {
             }
         }
 
+        // inserisco i prodotti nel carrello
         System.out.println("The products in the cart are: ");
         for (int i = 0; i < count; i++) {
             System.out.println(cart[i].getFullName());
         }
+
+        // stampo il totale dei prodotti
+        BigDecimal total = BigDecimal.ZERO;
+        for (int i = 0; i < count; i++) {
+            total = total.add(cart[i].getPrice());
+        }
+        System.out.println("Il totale dei prodotti nel carrello è: " + total + "€");
 
         scan.close();
     }
