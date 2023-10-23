@@ -47,6 +47,7 @@ public class Cart {
                 System.out.print("Is a smart TV? Insert (true) for yes or (false) for not: ");
                 boolean smart = scan.nextBoolean();
                 Tv tv = new Tv(TvName, TvDescription, TvPrice, new BigDecimal(TvVat), dimension, smart);
+                System.out.println(tv);
                 break;
             } else if (choice == 3) {
                 System.out.print("Enter the name of the headphones: ");
@@ -55,13 +56,16 @@ public class Cart {
                 String headDescription = scan.nextLine();
                 System.out.print("Enter the price: ");
                 BigDecimal headPrice = scan.nextBigDecimal();
-                System.out.println("Enter the vat: ");
-                double headVat = scan.nextInt();
+                scan.nextLine(); // Pulisci la riga vuota
+                System.out.print("Enter the vat: ");
+                double headVat = scan.nextDouble();
+                scan.nextLine(); // Pulisci la riga vuota
                 System.out.print("Enter the color: ");
                 String color = scan.nextLine();
                 System.out.print("Is wireless? Insert true for yes or false for not: ");
                 boolean wireless = scan.nextBoolean();
                 Headphones headphones = new Headphones(headName, headDescription, headPrice, new BigDecimal(headVat), color, wireless);
+                System.out.println(headphones);
                 break;
             } else if (choice == 4) {
                 System.out.println("Goodbye");

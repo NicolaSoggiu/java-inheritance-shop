@@ -39,6 +39,7 @@ public class Tv extends Product {
 
     @Override
     public String toString() {
-        return super.toString() + "Dimension: " + dimension + " " + "Is smart? " + isSmart;
+        return "Name: " + getName() + "\nDescription: " + getDescription() + "\nPrice: " + getPrice() + "\nVAT: " + getVat()
+                + "\nDimension: " + dimension + "\nSmart: " + isSmart;
     }
 }

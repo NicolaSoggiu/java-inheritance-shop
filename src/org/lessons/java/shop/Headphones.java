@@ -30,14 +30,15 @@ public class Headphones extends Product {
 
     private  String headType(){
         if(isWireless){
-            return  "Cuffie wireless";
+            return  "The headphones are wireless";
         }else{
-            return "cuffie cablate ";
+            return "The headphones are wired";
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Which color? " + color + " " + "Is Wireless?: " + isWireless;
+        return "Name: " + getName() + "\nDescription: " + getDescription() + "\nPrice: " + getPrice() + "\nVAT: " + getVat()
+                + "\nColor: " + color + "\nWireless: " + isWireless;
     }
 }
