@@ -38,7 +38,8 @@ public class Headphones extends Product {
 
     @Override
     public String toString() {
+        String headInfo = headType();
         return "Name: " + getName() + "\nDescription: " + getDescription() + "\nPrice: " + getPrice() + "\nVAT: " + getVat()
-                + "\nColor: " + color + "\nWireless: " + isWireless;
+                + "\nColor: " + color + "\nWireless: " + headInfo;
     }
 }

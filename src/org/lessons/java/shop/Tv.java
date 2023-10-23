@@ -39,7 +39,8 @@ public class Tv extends Product {
 
     @Override
     public String toString() {
+        String smartInfo = tvSmart();
         return "Name: " + getName() + "\nDescription: " + getDescription() + "\nPrice: " + getPrice() + "\nVAT: " + getVat()
-                + "\nDimension: " + dimension + "\nSmart: " + isSmart;
+                + "\nDimension: " + dimension + "\nSmart: " + smartInfo;
     }
 }
